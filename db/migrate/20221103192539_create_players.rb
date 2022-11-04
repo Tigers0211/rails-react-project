@@ -2,6 +2,7 @@ class CreatePlayers < ActiveRecord::Migration[7.0]
   def change
     create_table :players do |t|
       t.integer :team_id
+      t.string :player_name
       t.string :position
       t.integer :passing_yards
       t.integer :passing_touchdowns

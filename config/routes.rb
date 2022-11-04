@@ -9,4 +9,10 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   get '/hello', to: 'application#hello_world'
+
+  post "/signup", to: "users#create"
+
+  post "/login" , to: "sessions#create"
+
+  delete "/logout" , to: "sessions#destroy"
 end
