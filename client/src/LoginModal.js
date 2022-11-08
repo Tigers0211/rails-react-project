@@ -3,14 +3,28 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
 
-function LoginModal({handleShow, handleClose, show}){
+function LoginModal({handleShow, handleClose, show, handleLogin}){
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState('')
-
-  function handleSubmit(){
-
+ const userData = {
+      username : username,
+      password : password,
   }
+  
+  
+  function handleSubmit(e){
+   e.preventDefault()
 
+  fetch("/login", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json",
+    },
+    body: JSON.stringify(userData)
+  })
+  .then((res) => res.json())
+  .then((data) => handleLogin(data))}
+ 
 
   
 
@@ -26,14 +40,14 @@ function LoginModal({handleShow, handleClose, show}){
               <Modal.Title>Log Back In</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-              <Form  onSubmit={handleSubmit}>
+              <Form  onSubmit={(e) => handleSubmit(e)}>
                 <Form.Group className="mb-3" controlId="username">
                   <Form.Label>Username</Form.Label>
                   <Form.Control
                     type="text"
                     placeholder="Enter Username"
                     onChange={(e) => setUsername(e.target.value)}
-
+                    value={username}
                     autoFocus
                   />
                 </Form.Group>
@@ -43,19 +57,15 @@ function LoginModal({handleShow, handleClose, show}){
                     type="Password"
                     placeholder="Enter Password"
                     onChange={(e) => setPassword(e.target.value)}
+                    value ={password}
                     autoFocus
                   />
                 </Form.Group>
-              </Form>
-            </Modal.Body>
-            <Modal.Footer>
-              <Button variant="secondary" onClick={handleClose}>
-                Close
-              </Button>
-              <Button variant="primary" onClick={handleClose}>
+              <Button variant="primary" type="submit" onClick={handleClose} >
                 Log In
               </Button>
-            </Modal.Footer>
+              </Form>
+            </Modal.Body>
           </Modal>
         </>
       );

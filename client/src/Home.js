@@ -3,7 +3,7 @@ import RegisterModal from "./RegisterModal";
 import {useState} from 'react';
 import "./Home.css";
 
-function Home(){
+function Home({handleLogin}){
     const [show, setShow] = useState(false);
     const [loginShow, setLoginShow] = useState(false)
 
@@ -14,8 +14,14 @@ function Home(){
 
     return(
         <div className="home">
-            <LoginModal show={loginShow} handleClose={handleLoginClose} handleShow={handleLoginShow}/>
-            <RegisterModal show={show} handleClose={handleClose} handleShow={handleShow}/>
+            <LoginModal show={loginShow}
+             handleClose={handleLoginClose}
+              handleShow={handleLoginShow}
+              handleLogin={handleLogin} />
+            <RegisterModal show={show}
+             handleClose={handleClose}
+              handleShow={handleShow}
+              handleLogin={handleLogin}/>
 
         </div>
     )
