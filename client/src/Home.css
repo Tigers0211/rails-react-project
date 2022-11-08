@@ -1,0 +1,15 @@
+.home {
+ width: 100vw;
+ height: 100vh;
+background-image: url("https://www.gannett-cdn.com/presto/2020/11/23/PCHH/4f90c673-ff62-4e66-8605-ce8ae2e9cb10-635787293743493871-453653643.jpg?width=1200&disable=upscale&format=pjpg&auto=webp");
+background-repeat: no-repeat;
+background-position: center;
+background-size: cover;
+
+}
+
+.home{
+   padding-left: 45vw;
+   padding-top: 50vh;
+}
+
