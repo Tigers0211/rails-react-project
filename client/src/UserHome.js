@@ -13,6 +13,7 @@ useEffect(() =>{
         .then(data => setPlayers(data))
 }, [])
 
+console.log(players)
 
     return(
         <div className="UserHome">
