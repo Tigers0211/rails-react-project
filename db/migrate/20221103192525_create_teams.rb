@@ -4,6 +4,7 @@ class CreateTeams < ActiveRecord::Migration[7.0]
       t.string :team_name
       t.integer :user_id
       t.integer :league_id
+
       t.timestamps
     end
   end
