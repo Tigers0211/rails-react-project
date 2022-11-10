@@ -30,7 +30,7 @@ class LeaguesController < ApplicationController
 private
 
     def league_params
-        params.permit(:league_name, :commisioner_name)
+        params.permit(:league_name, :commisioner_name, :favorite)
     end
 
     def find_league

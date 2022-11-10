@@ -30,6 +30,7 @@ function App() {
     setCurrentUser(user)
   }
 
+  
 
 
   
@@ -43,7 +44,7 @@ function App() {
       <Route path='/userhome'
       element = { <UserHome currentUser={currentUser} teams={teams} />}/>
 
-      <Route path="new-team"
+      <Route path="/new-team"
       element ={<CreateNewTeam/>} />
 
       <Route path='/teams/:id'

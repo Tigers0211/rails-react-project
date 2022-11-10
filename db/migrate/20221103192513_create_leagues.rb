@@ -3,6 +3,7 @@ class CreateLeagues < ActiveRecord::Migration[7.0]
     create_table :leagues do |t|
       t.string :league_name
       t.string :commisioner_name
+      t.boolean :favorite
       t.timestamps
     end
   end

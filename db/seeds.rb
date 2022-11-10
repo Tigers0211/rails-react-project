@@ -18,9 +18,9 @@ puts "users done!"
 
 puts "creating leagues!"
 
-league1= League.create(league_name: "Lab Lifters", commisioner_name:"Csumm999")
-league2= League.create(league_name: "NFL Sucks", commisioner_name: "BillyN123")
-free_agents=League.create(league_name: "Database", commisioner_name: "ADMIN")
+league1= League.create(league_name: "Lab Lifters", commisioner_name:"Csumm999",  favorite: true)
+league2= League.create(league_name: "NFL Sucks", commisioner_name: "BillyN123",  favorite: true)
+free_agents=League.create(league_name: "Database", commisioner_name: "ADMIN",  favorite: true)
 
 puts "Leagues done!"
 
