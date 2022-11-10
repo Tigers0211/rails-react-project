@@ -23,7 +23,11 @@ function LoginModal({handleShow, handleClose, show, handleLogin}){
     body: JSON.stringify(userData)
   })
   .then((res) => res.json())
-  .then((data) => handleLogin(data))}
+  .then((data) => {
+    handleLogin()
+    sessionStorage.setItem('user_data', JSON.stringify(data) )
+    
+  })}
  
 
   

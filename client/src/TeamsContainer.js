@@ -8,11 +8,8 @@ function TeamsContainer({ firstTeam, secondTeam}){
   const navigate = useNavigate();
     const [teams, setTeams] = useState([])
     
-    
-   
-   
-    
-    function handleClick1(){
+    function handleClick1(e){
+      console.log(e)
       navigate(`/teams/${firstTeam.id}`)
     }
 
@@ -30,7 +27,7 @@ function TeamsContainer({ firstTeam, secondTeam}){
         <Card.Text>
          A member of the league {firstTeam.league.league_name}
         </Card.Text>
-        <Button onClick={handleClick1} variant="primary">Look at team</Button>
+        <Button onClick={(e) =>handleClick1(e)} variant="primary">Look at team</Button>
       </Card.Body>
       
     </Card>

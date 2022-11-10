@@ -1,8 +1,8 @@
-
 import { useEffect, useState } from "react";
 import { useParams } from 'react-router-dom'
 import NavigationBar from "./NavigationBar";
 import Table from 'react-bootstrap/Table';
+import TeamsContainer from "./TeamsContainer";
 
 
 
@@ -18,25 +18,12 @@ function UserTeams(){
     }, [])
 
 
-   
+   console.log(team)
     
-   const mappedPlayers = team.players.map((player) =>{
-    return (
-        <tr>
-          <td>{player.position}</td>
-          <td>{player.player_name}</td>
-          
-
-          
-        </tr>
-    )
-   })
-
-
     return(
-        <div>
-        <NavigationBar/>
-
+  <div>
+    <NavigationBar/>
+    {team.team_name ? <div>
         <h1 className="teamName">{team.team_name}</h1>
         <Table striped>
       <thead>
@@ -47,13 +34,20 @@ function UserTeams(){
         </tr>
       </thead>
       <tbody>
-      {mappedPlayers}
+     { team.players.map((player) =>{
+    return (
+        <tr>
+          <td>{player.position}</td>
+          <td>{player.player_name}</td>
+        </tr>
+    )
+   })}
         
       </tbody>
     </Table>
             
-        </div>
-    )
+        </div> : null
+}</div>)
 }
 
 export default UserTeams;

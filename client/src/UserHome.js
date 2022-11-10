@@ -3,13 +3,23 @@ import { useEffect, useState, useContext } from "react";
 import NavigationBar from './NavigationBar';
 import { useNavigate } from "react-router-dom";
 import TeamsContainer from "./TeamsContainer";
+import { userContext } from "./App";
 
 
 
-
-function UserHome({teams, currentUser}){
+function UserHome({}){
     const navigate = useNavigate();
+    const [teams, setTeams] = useState([])
  
+    const [currentUser ] = useContext(userContext)
+    
+    useEffect(() =>{
+
+        fetch('/teams')
+        .then(res => res.json())
+        .then(data => {setTeams(data)})
+    }, [])
+
     
   function handleLogout(){
     navigate('/')
@@ -21,7 +31,9 @@ function UserHome({teams, currentUser}){
     })
     .then((r) => r.json())
     .then(data => {console.log(data)
-    handleLogout()})
+    handleLogout()
+    sessionStorage.removeItem("user_data")
+})
 }
 
     const filteredTeams = teams.filter((team) => team.user_id === currentUser.id)
@@ -29,14 +41,14 @@ function UserHome({teams, currentUser}){
     const firstTeam = filteredTeams[0]
     const secondTeam = filteredTeams[1]
 
-    
+    console.log(teams)
     return(
         <div className="UserHome">
             <Header />
             <NavigationBar handleDelete={handleDelete}/>
             <div>
             
-    <TeamsContainer firstTeam={firstTeam} secondTeam={secondTeam}/>
+    { teams.length ? <TeamsContainer firstTeam={firstTeam} secondTeam={secondTeam}/> : null}
     </div>
             
             
