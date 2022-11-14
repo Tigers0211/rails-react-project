@@ -9,7 +9,7 @@ import { userContext } from "./App";
 
 function UserHome({}){
     const navigate = useNavigate();
-    const [teams, setTeams] = useState([])
+    const [filteredTeams, setFilteredTeams] = useState([])
  
     const [currentUser ] = useContext(userContext)
     
@@ -17,8 +17,10 @@ function UserHome({}){
 
         fetch('/teams')
         .then(res => res.json())
-        .then(data => {setTeams(data)})
+        .then(data => {
+       filteredUsersTeams(data) })
     }, [])
+
 
     
   function handleLogout(){
@@ -36,23 +38,37 @@ function UserHome({}){
 })
 }
 
-    const filteredTeams = teams.filter((team) => team.user_id === currentUser.id)
+function filteredUsersTeams(teams){
+    const newFilteredTeams = teams.filter((team) => team.user_id === currentUser.id)
+        setFilteredTeams(newFilteredTeams)
+    
+}
 
-    const firstTeam = filteredTeams[0]
-    const secondTeam = filteredTeams[1]
 
-    console.log(teams)
+
+console.log(filteredTeams.length)
+    
     return(
+    <div>
+       { filteredTeams.length ?
         <div className="UserHome">
             <Header />
             <NavigationBar handleDelete={handleDelete}/>
-            <div>
-            
-    { teams.length ? <TeamsContainer firstTeam={firstTeam} secondTeam={secondTeam}/> : null}
-    </div>
             
             
-        </div>
+    {filteredTeams.map((team) =>{
+     return <TeamsContainer team={team}/>   
+    })}
+    
+            
+            
+        </div> :
+        
+        <div> <Header /> 
+                <NavigationBar /> 
+                
+                </div>}
+</div>
     )
 }
 
