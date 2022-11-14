@@ -81,6 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: sec_fantasy_production
-  username: sec_fantasy
-  password: <%= ENV["SEC_FANTASY_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
