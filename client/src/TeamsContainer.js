@@ -19,7 +19,7 @@ function TeamsContainer({ team }){
     
     <div>   
         <Card className="text-center">
-      <Card.Header>Team</Card.Header>
+      <Card.Header><strong>Team</strong></Card.Header>
       <Card.Body>
         <Card.Title>{team.team_name}</Card.Title>
         <Card.Text>

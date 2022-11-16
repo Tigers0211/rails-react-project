@@ -2,6 +2,7 @@ import NavigationBar from "./NavigationBar";
 import { useEffect, useState } from "react";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import './AllLeagues.css'
 
 
 function AllLeagues(){
@@ -76,10 +77,12 @@ const mappedLeagues = leagues.map((league) =>{
     return(
     
     <div>
-        <NavigationBar />
-
+        <NavigationBar /> 
+        <h1 className="leagueTitle">All Leagues</h1>
+        <div className="cardboy">
+         
         {mappedLeagues}
-
+        </div>
     </div>
     )
 }

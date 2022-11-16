@@ -35,7 +35,7 @@ function handleSubmit(e){
 
     return (
         <>
-          <Button className = "register" variant="dark" onClick={handleShow}>
+          <Button className = "registerBtn" variant="dark" onClick={handleShow}>
             Register
           </Button>
     

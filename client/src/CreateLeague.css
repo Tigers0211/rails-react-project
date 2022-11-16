@@ -1,0 +1,13 @@
+.newLeagueTitle{
+    text-align: center;
+    margin-top: 10px;
+}
+
+.leagueForm{
+    margin-left: 35vw;
+    margin-right: 35vw;
+}
+
+.leagueBtn.btn.btn-outline-success{
+    margin-left: 13vw;
+}

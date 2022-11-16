@@ -1,0 +1,10 @@
+.cardboy{
+display: flex;
+justify-content: center;
+margin-top: 2vh;
+}
+
+.leagueTitle{
+text-align: center;
+
+}

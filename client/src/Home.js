@@ -14,6 +14,8 @@ function Home({handleLogin}){
 
     return(
         <div className="home">
+            <h1 className="homeTitle">Welcome to SWC Fantasy Football!</h1>
+
             <LoginModal show={loginShow}
              handleClose={handleLoginClose}
               handleShow={handleLoginShow}

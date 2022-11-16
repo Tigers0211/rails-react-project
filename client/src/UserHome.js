@@ -4,6 +4,7 @@ import NavigationBar from './NavigationBar';
 import { useNavigate } from "react-router-dom";
 import TeamsContainer from "./TeamsContainer";
 import { userContext } from "./App";
+import CreateLeague from "./CreateLeague";
 
 
 
@@ -11,7 +12,7 @@ function UserHome({}){
     const navigate = useNavigate();
     const [filteredTeams, setFilteredTeams] = useState([])
  
-    const [currentUser ] = useContext(userContext)
+    const [currentUser] = useContext(userContext)
     
     useEffect(() =>{
 
@@ -31,10 +32,11 @@ function UserHome({}){
     fetch("/logout", {
         method: "DELETE",
     })
-    .then((r) => r.json())
-    .then(data => {console.log(data)
-    handleLogout()
-    sessionStorage.removeItem("user_data")
+    .then((r) => {r.json()
+     handleLogout()
+    console.log(r)
+    sessionStorage.removeItem("user_data") 
+    
 })
 }
 
@@ -44,10 +46,6 @@ function filteredUsersTeams(teams){
     
 }
 
-
-
-console.log(filteredTeams.length)
-    
     return(
     <div>
        { filteredTeams.length ?
@@ -57,7 +55,7 @@ console.log(filteredTeams.length)
             
             
     {filteredTeams.map((team) =>{
-     return <TeamsContainer team={team}/>   
+     return <TeamsContainer key={team.id}team={team}/>   
     })}
     
             
@@ -65,8 +63,8 @@ console.log(filteredTeams.length)
         </div> :
         
         <div> <Header /> 
-                <NavigationBar /> 
-                
+               
+                <CreateLeague />
                 </div>}
 </div>
     )

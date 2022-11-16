@@ -2,6 +2,7 @@ import NavigationBar from "./NavigationBar";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import React, { useState } from 'react';
+import "./CreateLeague.css"
 
 function CreateLeague(){
     const [leagueName, setLeagueName] = useState('')
@@ -27,12 +28,12 @@ function CreateLeague(){
 
     return(
         <div className="createleague">
-            <NavigationBar/>
+            <NavigationBar />
 
-            <h1>Create a New League</h1>
-            <Form onSubmit={(e) => handleSubmit(e)}>
+            <h1 className="newLeagueTitle">Create a New League</h1>
+            <Form onSubmit={(e) => handleSubmit(e)} className='leagueForm'>
       <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-        <Form.Label>New League Name</Form.Label>
+        <Form.Label><strong>New League Name</strong></Form.Label>
         <Form.Control
          type="text" 
          placeholder="New League Name"
@@ -40,14 +41,14 @@ function CreateLeague(){
          value={leagueName} />
       </Form.Group>
       <Form.Group className="mb-3" controlId="commisionerName">
-        <Form.Label>Commissioner Username</Form.Label>
+        <Form.Label><strong>Commissioner Username</strong></Form.Label>
         <Form.Control 
         type="text"
          placeholder="Your Username"
          onChange={(e) => setUsername(e.target.value)}
             value={username} />
       </Form.Group>
-      <Button variant="outline-success" type="submit">Create League</Button>
+      <Button variant="outline-success" type="submit" className="leagueBtn">Create League</Button>
     </Form>
 
         </div>

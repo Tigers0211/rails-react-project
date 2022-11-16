@@ -9,7 +9,15 @@ background-size: cover;
 }
 
 .home{
-   padding-left: 45vw;
-   padding-top: 50vh;
+   padding-top: 25vh;
 }
 
+.homeTitle{
+   text-align: center;
+   color: rgba(9, 9, 9, 0.637);
+}
+
+.homeButton.btn.btn-dark{
+   margin-left: 45vw;
+   
+}

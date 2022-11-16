@@ -35,7 +35,7 @@ function LoginModal({handleShow, handleClose, show, handleLogin}){
 
     return (
         <>
-          <Button variant="dark" onClick={handleShow} className="Log-In">
+          <Button variant="dark" onClick={handleShow} className="homeButton">
             Log In
           </Button>
     
