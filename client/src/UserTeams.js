@@ -20,7 +20,7 @@ function UserTeams(){
  console.log(team)
     const na = "N/A"
     return(
-  <div>
+  <div className="teamCards">
     <NavigationBar/>
     {team.team_name ? <div>
         <h1 className="teamName">{team.team_name}</h1>

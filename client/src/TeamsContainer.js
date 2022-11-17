@@ -13,8 +13,6 @@ function TeamsContainer({ team }){
       navigate(`/teams/${team.id}`)
     }
 
-  
- 
     return(
     
     <div>   
@@ -25,7 +23,7 @@ function TeamsContainer({ team }){
         <Card.Text>
          A member of the league {team.league.league_name}
         </Card.Text>
-        <Button onClick={(e) =>handleClick(e)} variant="primary">Look at team</Button>
+        <Button onClick={(e) =>handleClick(e)} variant="dark">Look at team</Button>
       </Card.Body>
       
     </Card>

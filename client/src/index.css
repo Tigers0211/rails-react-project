@@ -1,8 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap');
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Crimson Text', serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -11,3 +11,43 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.homeButton.btn.btn-dark{
+  font-family: 'Crimson Text', serif;
+}
+
+.registerBtn.btn.btn-dark{
+  font-family: 'Crimson Text', serif;
+}
+
+.modal{
+  font-family: 'Crimson Text', serif;
+}
+
+.navbar{
+  font-family: 'Crimson Text', serif;
+}
+
+.card{
+  font-family: 'Crimson Text', serif;
+  
+}
+
+.newLeagueTitle{
+  font-family: 'Crimson Text', serif;
+}
+
+.leagueForm{
+  font-family: 'Crimson Text', serif;
+}
+
+.text-center.card{
+ color:#004b8d;
+}
+
+
+
+.card{
+
+}
+

@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import TeamsContainer from "./TeamsContainer";
 import { userContext } from "./App";
 import CreateLeague from "./CreateLeague";
+import './UserHome.css'
 
 
 
@@ -43,11 +44,10 @@ function UserHome({}){
 function filteredUsersTeams(teams){
     const newFilteredTeams = teams.filter((team) => team.user_id === currentUser.id)
         setFilteredTeams(newFilteredTeams)
-    
 }
 
     return(
-    <div>
+    <div className="userHome">
        { filteredTeams.length ?
         <div className="UserHome">
             <Header />
